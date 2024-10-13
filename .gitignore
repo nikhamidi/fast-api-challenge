@@ -1,0 +1,42 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment directories
+venv/
+env/
+.venv/
+
+
+# Ignore log files
+*.log
+
+# Ignore IDE/editor files
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+
+# Ignore sensitive files (except .env)
+*.db
+*.sqlite3
+*.bak
+*.swp
+*.swo
+
+# Ignore the build directories
+build/
+dist/
+*.egg-info/
+
+# Ignore test output
+.test/
+coverage/
+*.cover
+*.egg
+*.eggs/
+
+# Ignore local configuration files
+*.local
+

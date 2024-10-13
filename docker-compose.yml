@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    build: 
+      context: ./db
+    container_name: mongodb
+    env_file:
+      - .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=fastdb
+    ports:
+      - 27017:27017
+
+  fastapi-app:
+    build: 
+      context: ./app 
+    container_name: fastapi-app
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+    depends_on:
+      - mongodb
+    volumes:
+      - ./app:/app 
